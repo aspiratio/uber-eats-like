@@ -84,6 +84,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.4-x86_64-darwin)
       racc (~> 1.4)
+    prettier (1.6.1)
     puma (4.3.8)
       nio4r (~> 2.0)
     racc (1.5.2)
@@ -148,6 +149,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   listen (~> 3.2)
+  prettier
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.6)
   spring
