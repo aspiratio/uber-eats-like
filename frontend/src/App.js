@@ -1,22 +1,35 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { Foods } from "./containers/Foods";
+import { Orders } from "./containers/Orders";
+import { Restaurants } from "./containers/Restaurants";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>テキストを変更してみる</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        {/* 店舗一覧ページ */}
+        <Route exact path="/restaurants">
+          <Restaurants />
+        </Route>
+        {/* フード一覧ページ */}
+        <Route
+          exact
+          path="/restaurants/:restaurantsId/foods"
+          render={({ match }) => <Foods match={match} />}
+        />
+        {/* 注文一覧ページ */}
+        <Route exact path="/orders">
+          <Orders />
+        </Route>
+        <Route
+          exact
+          path="/restaurants/:restaurantsId/foods"
+          render={({ match }) => <Foods match={match} />}
+        />
+      </Switch>
+    </Router>
   );
 }
 
