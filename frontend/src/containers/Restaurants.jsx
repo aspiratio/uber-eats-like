@@ -81,7 +81,7 @@ export const Restaurants = () => {
   }, []);
 
   return (
-    <Fragment>
+    <>
       <HeaderWrapper>
         <MainLogoImage src={MainLogo} alt="main logo" />
       </HeaderWrapper>
@@ -111,6 +111,6 @@ export const Restaurants = () => {
           ))
         )}
       </RestaurantsContentsList>
-    </Fragment>
+    </>
   );
 };
