@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { LocalMallIcon } from "../components/Icons";
 import { FoodWrapper } from "../components/FoodWrapper";
 import Skeleton from "@material-ui/lab/Skeleton";
+import { FoodOrderDialog } from "../components/FoodOrderDialog";
 
 // reducers
 import {
@@ -112,6 +113,18 @@ export const Foods = ({ match }) => {
           ))
         )}
       </FoodsList>
+      {state.isOpenOrderDialog && (
+        <FoodOrderDialog
+          food={state.selectedFood}
+          isOpen={state.isOpenOrderDialog}
+          onClose={() =>
+            setState({
+              ...state,
+              isOpenOrderDialog: false,
+            })
+          }
+        />
+      )}
     </>
   );
 };
